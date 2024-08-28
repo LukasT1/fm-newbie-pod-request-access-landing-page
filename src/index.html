@@ -20,8 +20,41 @@
     <title>Frontend Mentor | Pod request access landing page</title>
   </head>
   <body>
-    Publish your podcasts everywhere. Upload your audio to Pod with a single
-    click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google
-    Podcasts, Pocket Casts and more! Request access
+    <div class="container">
+      <nav class="nav">
+        <img src="assets/desktop/logo.svg" alt="" />
+      </nav>
+      <main class="content">
+        <h1 class="content__heading">Publish your podcasts everywhere.</h1>
+        <p class="content__text text-2">
+          Upload your audio to Pod with a single click. We’ll then distribute
+          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
+          and more!
+        </p>
+        <form action="" class="content__form">
+          <input class="content__form-input" type="text" />
+          <button class="content__form-btn">Request access</button>
+        </form>
+        <div class="content__podcasts">
+          <img
+            src="assets/desktop/spotify.svg"
+            alt="Spotify logo"
+            class="content__podcasts-item"
+          /><img
+            src="assets/desktop/apple-podcast.svg"
+            alt="Apple Podcast logo"
+            class="content__podcasts-item"
+          /><img
+            src="assets/desktop/google-podcasts.svg"
+            alt="Google podcast logo"
+            class="content__podcasts-item"
+          /><img
+            src="assets/desktop/pocket-casts.svg"
+            alt="Pocket Cast logo"
+            class="content__podcasts-item"
+          />
+        </div>
+      </main>
+    </div>
   </body>
 </html>
