@@ -1,0 +1,280 @@
+@use "variables";
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  height: 100vh;
+
+  background-color: var(--blue-950);
+
+  //Align content in the middle of the viewport
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.pattern {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__img {
+    position: absolute;
+    bottom: -9%;
+    right: 0;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 144rem;
+  overflow: hidden;
+  //   overflow-y: visible;
+  display: grid;
+  grid-template-columns: 8rem repeat(3, 1fr) 8rem;
+
+  &__image {
+    position: absolute;
+    max-width: 200vw;
+    height: 100%;
+    width: fit-content;
+    top: 0;
+    right: -5%;
+    z-index: -5;
+    clip-path: polygon(
+      0% 0%,
+      62.5% 0%,
+      100% 0%,
+      100% 100%,
+      36.53% 100%,
+      36.53% 27.22%,
+      0% 27.22%
+    );
+  }
+}
+
+.nav {
+  grid-column: 2/3;
+  margin-bottom: var(--1300);
+}
+
+.content {
+  grid-column: 2 / 4;
+  padding-top: var(--1100);
+
+  &__heading {
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: var(--300);
+
+    &--white {
+      color: var(--white);
+    }
+  }
+
+  &__form-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__form {
+    margin: var(--500) 0;
+
+    &-input {
+      position: relative;
+      width: 44.8rem;
+      height: 5.2rem;
+    }
+    &-btn {
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      transform: translateY(-50%);
+    }
+  }
+  &__text {
+    max-width: 65%;
+    color: var(--blue-300);
+  }
+  &__podcasts {
+    margin-top: var(--300);
+    display: flex;
+    flex-flow: row;
+    column-gap: var(--400);
+
+    &-item {
+      max-height: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-1200) {
+  .container {
+    &__image {
+      right: -15%;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-1100) {
+  .pattern {
+    &__img {
+      position: absolute;
+      bottom: 0%;
+      right: 0;
+    }
+  }
+
+  .container {
+    &__image {
+      right: -33%;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-950) {
+  body {
+    height: auto;
+  }
+
+  .pattern {
+    overflow-x: hidden;
+    &__img {
+      position: absolute;
+      bottom: -5%;
+      right: -15%;
+    }
+  }
+  .container {
+    &__image {
+      right: -43%;
+      clip-path: polygon(
+        30% 0%,
+        62.5% 0%,
+        100% 0%,
+        100% 100%,
+        57% 100%,
+        57% 35%,
+        30% 35%
+      );
+    }
+  }
+
+  .nav {
+    margin-top: var(--1300);
+  }
+}
+
+@media (max-width: variables.$bp-750) {
+  .container {
+    &__image {
+      right: -60%;
+      clip-path: polygon(
+        45% 0%,
+        62.5% 0%,
+        100% 0%,
+        100% 100%,
+        57% 100%,
+        57% 35%,
+        45% 35%
+      );
+    }
+  }
+
+  .content {
+    &__heading {
+      overflow-wrap: normal;
+    }
+
+    &__form {
+      margin: var(--500) 0;
+
+      &-input {
+        position: relative;
+        width: 40rem;
+        height: 5.2rem;
+      }
+    }
+
+    &__text {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: variables.$bp-665) {
+  .container {
+    max-height: 100vh;
+    height: 100vh;
+    overflow: visible;
+    background: url(assets/mobile/image-host.jpg) no-repeat 0 0 / cover,
+      rgba($color: #121725, $alpha: 0.85);
+    grid-template-columns: minmax(2%, 3.6rem) 1fr minmax(2%, 3.6rem);
+    background-blend-mode: darken;
+    justify-items: center;
+
+    text-align: center;
+  }
+  .content {
+    grid-column: 2/3;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    &__heading {
+      order: 0;
+      max-width: 75%;
+    }
+    &__text {
+      order: 1;
+      max-width: 95%;
+    }
+    &__podcasts {
+      order: 2;
+      max-width: 100%;
+      &-item {
+        width: 100%;
+      }
+    }
+    &__form-wrapper {
+      display: flex;
+      flex-flow: column;
+      justify-items: stretch;
+      row-gap: var(--100);
+    }
+
+    &__form {
+      order: 3;
+      margin: var(--500) 0;
+      align-self: stretch;
+
+      &-input {
+        position: relative;
+        width: 100%;
+      }
+
+      &-btn {
+        position: unset;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .nav {
+    margin: var(--400) 0;
+  }
+
+  .pattern {
+    &__img {
+      display: none;
+    }
+  }
+  .container {
+    &__image {
+      display: none;
+    }
+  }
+}

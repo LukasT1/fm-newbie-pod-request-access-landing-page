@@ -1,3 +1,5 @@
+@use "variables";
+
 body {
   font-family: "Chivo", sans-serif;
   letter-spacing: 0px;
@@ -8,12 +10,20 @@ h1,
   font-size: 4.8rem;
   font-weight: 300;
   line-height: 120%;
+
+  @media (max-width: variables.$bp-750) {
+    font-size: 3.2rem;
+  }
 }
 
 .text-2 {
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 150%;
+
+  @media (max-width: variables.$bp-750) {
+    font-size: 1.4rem;
+  }
 }
 
 .text-3 {
