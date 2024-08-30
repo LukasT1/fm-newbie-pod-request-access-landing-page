@@ -13,32 +13,6 @@
     color: var(--white);
   }
 
-  &-error-msg {
-    position: absolute;
-    left: 5%;
-    top: 75%;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--red);
-    opacity: 0;
-    transition: all 0.3s;
-
-    @media (max-width: variables.$bp-665) {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    &--visible {
-      transform: translateY(100%);
-      opacity: 1;
-
-      @media (max-width: variables.$bp-665) {
-        left: 50%;
-        transform: translate(-50%, 200%);
-      }
-    }
-  }
-
   &--error {
     position: relative;
     outline: 1px solid var(--red);
