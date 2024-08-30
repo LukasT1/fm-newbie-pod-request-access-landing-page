@@ -649,9 +649,21 @@ button:hover {
   opacity: 0;
   transition: all 0.3s;
 }
+@media (max-width: 41.5625em) {
+  .content__form-input-error-msg {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .content__form-input-error-msg--visible {
   transform: translateY(100%);
   opacity: 1;
+}
+@media (max-width: 41.5625em) {
+  .content__form-input-error-msg--visible {
+    left: 50%;
+    transform: translate(-50%, 200%);
+  }
 }
 .content__form-input--error {
   position: relative;

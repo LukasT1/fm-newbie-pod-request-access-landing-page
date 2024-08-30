@@ -1,3 +1,5 @@
+@use "../base/variables";
+
 .content__form-input {
   font-family: inherit;
   background-color: var(--blue-900);
@@ -21,9 +23,19 @@
     opacity: 0;
     transition: all 0.3s;
 
+    @media (max-width: variables.$bp-665) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     &--visible {
       transform: translateY(100%);
       opacity: 1;
+
+      @media (max-width: variables.$bp-665) {
+        left: 50%;
+        transform: translate(-50%, 200%);
+      }
     }
   }
 
