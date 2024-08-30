@@ -11,8 +11,7 @@ body {
 
   //Align content in the middle of the viewport
   display: grid;
-  justify-content: center;
-  align-content: center;
+  place-content: center;
 }
 .pattern {
   position: relative;
@@ -31,7 +30,6 @@ body {
   width: 100%;
   max-width: 144rem;
   overflow: hidden;
-  //   overflow-y: visible;
   display: grid;
   grid-template-columns: 8rem repeat(3, 1fr) 8rem;
 
